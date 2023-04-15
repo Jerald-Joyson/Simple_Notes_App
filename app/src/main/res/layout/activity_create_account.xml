@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:text="Hello"
             android:textSize="32dp"
-            android:textColor="@color/black"
+            android:textColor="@color/my_primary"
             android:textStyle="bold"/>
 
         <TextView
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:text="Lets Get Started"
             android:textSize="32dp"
-            android:textColor="@color/black"
+            android:textColor="@color/my_primary"
             android:textStyle="bold"/>
 
     </LinearLayout>
