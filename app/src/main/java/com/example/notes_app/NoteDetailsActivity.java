@@ -1,10 +1,18 @@
 package com.example.notes_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+
+import java.sql.Timestamp;
 
 public class NoteDetailsActivity extends AppCompatActivity {
     EditText titleEditText,contentEditText;
@@ -27,6 +35,29 @@ public class NoteDetailsActivity extends AppCompatActivity {
             titleEditText.setError("Title is required");
             return;
         }
+        Note note = new Note();
+        note.setTitle(noteTitle);
+        note.setContent(noteContent);
+        note.setTimestamp(new Timestamp(System.currentTimeMillis()));
 
+        saveNoteToFirebase(note);
+    }
+
+    void saveNoteToFirebase(Note note){
+        DocumentReference documentReference;
+        documentReference = Utility.getCollectionReferenceForNotes().document();
+
+        documentReference.set(note).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    //notes added
+                    Utility.showToast(NoteDetailsActivity.this,"Note added Successfully");
+                    finish();
+                }else{
+                    Utility.showToast(NoteDetailsActivity.this,"Failed While adding notes");
+                }
+            }
+        });
     }
 }
