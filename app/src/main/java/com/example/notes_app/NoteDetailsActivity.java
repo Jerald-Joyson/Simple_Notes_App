@@ -10,9 +10,8 @@ import android.widget.ImageButton;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
-
-import java.sql.Timestamp;
 
 public class NoteDetailsActivity extends AppCompatActivity {
     EditText titleEditText,contentEditText;
@@ -38,7 +37,7 @@ public class NoteDetailsActivity extends AppCompatActivity {
         Note note = new Note();
         note.setTitle(noteTitle);
         note.setContent(noteContent);
-        note.setTimestamp(new Timestamp(System.currentTimeMillis()));
+        note.setTimestamp(Timestamp.now());
 
         saveNoteToFirebase(note);
     }
