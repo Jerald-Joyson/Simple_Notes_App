@@ -66,4 +66,18 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/delete_note_text_view_btn"
+        android:text="Delete note"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:backgroundTint="@color/white"
+        android:visibility="gone"
+        android:background="@drawable/rounded_corner"
+        android:textColor="#000000"
+        android:padding="10dp"/>
+
 </RelativeLayout>
