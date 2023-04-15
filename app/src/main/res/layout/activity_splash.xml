@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/my_primary"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity"
-    android:gravity="center"
-    android:orientation="vertical">
+    tools:context=".SplashActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/note_icon"
+            app:tint="@color/my_secondary"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Notes App"
+            android:textSize="32sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:layout_marginTop="15dp"
+            android:textStyle="bold"/>
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:indeterminateTint="@color/white"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Notes App"
-        android:textSize="32sp"
-        android:textColor="@color/white"
+        android:text="Developed by Jerald Joyson"
+        android:layout_alignParentBottom="true"
         android:gravity="center"
-        android:textStyle="bold"/>
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/off_white"/>
 
-    <ProgressBar
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:indeterminateTint="@color/white"
-        android:layout_margin="16dp"/>
-
-</LinearLayout>
+</RelativeLayout>
