@@ -21,7 +21,7 @@ This app is completely ready to use
  * on botton there is a button to delete note
  
  ## apk file download
-  * [Notes_App.apk](Notes_App) Click "View raw".
+  * [Notes_App.apk](Note_App) Click "View raw".
 
 # SCREENSHOTS 
 
